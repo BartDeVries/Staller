@@ -1,0 +1,35 @@
+{
+  "webroot": "wwwroot",
+  "version": "1.0.0-*",
+
+  "dependencies": {
+    "Microsoft.AspNet.Server.IIS": "1.0.0-beta7",
+    "Microsoft.AspNet.Mvc": "6.0.0-beta7",
+    "Microsoft.AspNet.Mvc.TagHelpers": "6.0.0-beta7",
+    "NodaTime": "2.0.0-alpha20150728",
+    "Microsoft.AspNet.StaticFiles": "1.0.0-beta7",
+    "WindowsAzure.Storage": "6.0.1-preview"    
+  },
+
+
+  "frameworks": {
+    "dnxcore50": {
+      "dependencies": {
+        "Staller.Core": "1.0.0-*"
+      }
+    }
+  },
+
+  "publishExclude": [
+    "node_modules",
+    "bower_components",
+    "**.xproj",
+    "**.user",
+    "**.vspscc"
+  ],
+  "exclude": [
+    "wwwroot",
+    "node_modules",
+    "bower_components"
+  ]
+}

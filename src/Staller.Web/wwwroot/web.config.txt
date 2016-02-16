@@ -1,0 +1,8 @@
+﻿<configuration>
+    <appSettings>
+        <add key="StorageConnectionString" value="DefaultEndpointsProtocol=https;AccountName=stalling;AccountKey=UL5Xff9RwB2J3OYp1eGTdHrgvA2UgxN/0QZO4lYlq3FZ4hgFssyd+lp3D2wSPl0sRPri7EEM5L9KvNY7q5BNkQ==" />
+    </appSettings>
+    <system.webServer>
+        
+    </system.webServer>
+</configuration>

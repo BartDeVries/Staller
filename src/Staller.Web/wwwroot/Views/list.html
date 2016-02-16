@@ -1,0 +1,27 @@
+﻿<div>
+
+    <h1>List companies</h1>
+    <table class="table table-bordered table-striped">
+        <thead>
+            <tr>
+                <th></th>
+                <th>Name</th>
+                <th>Director</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr ng-repeat="company in companies">
+                <td>
+                    <a href="/company/edit/{{company.Id}}" class="btn btn-default btn-xs">edit</a>
+                    <a href="/company/delete/{{company.Id}}" class="btn btn-danger btn-xs">delete</a>
+                </td>
+                <td>{{company.Name}}</td>
+                <td>-</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <p>
+        <a href="/company/add" class="btn btn-primary">Add New Company</a>
+    </p>
+</div>
