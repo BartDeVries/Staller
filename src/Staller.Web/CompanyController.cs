@@ -51,7 +51,7 @@ namespace Staller.Web
             
             if (!ModelState.IsValid)
             {
-                Context.Response.StatusCode = 400;
+                HttpContext.Response.StatusCode = 400;
             }
             else
             {
@@ -65,8 +65,8 @@ namespace Staller.Web
                 string url = Url.RouteUrl("Get", new { id = item.Id },
                     Request.Scheme, Request.Host.ToUriComponent());
 
-                Context.Response.StatusCode = 201;
-                Context.Response.Headers["Location"] = url;
+                HttpContext.Response.StatusCode = 201;
+                HttpContext.Response.Headers["Location"] = url;
             }
         }
 
@@ -76,7 +76,7 @@ namespace Staller.Web
         {
             if (!ModelState.IsValid)
             {
-                Context.Response.StatusCode = 400;
+                HttpContext.Response.StatusCode = 400;
             }
             else
             {
@@ -88,8 +88,8 @@ namespace Staller.Web
                 string url = Url.RouteUrl("Get", new { id = item.Id },
                     Request.Scheme, Request.Host.ToUriComponent());
 
-                Context.Response.StatusCode = 201;
-                Context.Response.Headers["Location"] = url;
+                HttpContext.Response.StatusCode = 201;
+                HttpContext.Response.Headers["Location"] = url;
             }
         }
 
