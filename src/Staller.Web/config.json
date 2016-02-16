@@ -1,0 +1,5 @@
+﻿{
+  "ConnectionStrings": {
+    "StorageConnectionString": "DefaultEndpointsProtocol=https;AccountName=<azure tables account>;AccountKey=<key for access>"
+  }
+}
