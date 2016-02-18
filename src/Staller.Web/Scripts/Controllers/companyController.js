@@ -19,6 +19,7 @@
 
     function CompanyAddController($scope, $location, Company) {
         $scope.company = new Company();
+        $scope.company.Label = 'temp';
         $scope.add = function () {
             $scope.company.$save(function () {
                 $location.path('/');

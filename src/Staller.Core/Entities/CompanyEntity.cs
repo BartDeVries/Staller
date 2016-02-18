@@ -14,7 +14,9 @@ namespace Staller.Core.Entities
         public Guid Id { get { return string.IsNullOrEmpty(RowKey) ? Guid.Empty : Guid.Parse(RowKey); } set { RowKey = value.ToString(); } }
 
         [Required]
-        public string Name { get { return PartitionKey; } set { PartitionKey = value; } }
+        public string Label { get { return PartitionKey; } set { PartitionKey = value; } }
+
+        public string Name { get; set; }
 
         public Guid AddressId { get; set; }
         

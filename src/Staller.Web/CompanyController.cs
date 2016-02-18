@@ -56,6 +56,7 @@ namespace Staller.Web
             else
             {
                 item.Id = Guid.NewGuid();
+                item.Label = Configuration.Label.Id;
                 
                 CompanyManager cm = new CompanyManager();
                 var res = cm.Save(item);

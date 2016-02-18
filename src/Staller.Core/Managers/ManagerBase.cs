@@ -4,7 +4,6 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using Microsoft.Extensions.Configuration;
 
 namespace Staller.Core.Managers
 {
@@ -20,14 +19,9 @@ namespace Staller.Core.Managers
         {
             TableReference = tableReference;
 
-            var builder = new ConfigurationBuilder()
-            .AddJsonFile("config.json")
-            .AddJsonFile("config.local.json", optional: true)
-            .AddEnvironmentVariables();
-            var Configuration = builder.Build();
+            
 
-
-            storageAccount = CloudStorageAccount.Parse(Configuration.GetSection("ConnectionStrings:StorageConnectionString").Value);
+            storageAccount = CloudStorageAccount.Parse(Configuration.ConnectionStrings.AzureStorage);
             tableClient = storageAccount.CreateCloudTableClient();
             table = tableClient.GetTableReference(TableReference);
         }
