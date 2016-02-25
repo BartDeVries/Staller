@@ -94,17 +94,25 @@ namespace Staller.Web
             }
         }
 
-        //// DELETE api/values/5
-        //[HttpDelete("{id}")]
-        //public IActionResult Delete(int id)
-        //{
-        //    var item = _items.FirstOrDefault(x => x.Id == id);
-        //    if (item == null)
-        //    {
-        //        return HttpNotFound();
-        //    }
-        //    _items.Remove(item);
-        //    return new HttpStatusCodeResult(204); // 201 No Content
-        //}
+        // DELETE api/values/5
+        [HttpDelete("{id}")]
+        public void Delete(string id)
+        {
+
+            CompanyManager cm = new CompanyManager();
+            var item = cm.GetAll(rowKey: id).Result.SingleOrDefault(); // _items.FirstOrDefault(x => x.Id == id);
+            //if (item != null)
+            //{
+            //    return HttpNotFound();
+            //}
+
+            var res = cm.Delete(item);
+            res.Wait();
+
+            string url = Url.RouteUrl("Get", new { id = item.Id }, Request.Scheme, Request.Host.ToUriComponent());
+
+            HttpContext.Response.StatusCode = 201;
+            HttpContext.Response.Headers["Location"] = url;
+        }
     }
 }

@@ -10,24 +10,24 @@
 
     function config($routeProvider, $locationProvider) {
         $routeProvider
-            .when('/', {
-                templateUrl: '/Views/list.html',
+            .when('/company/', {
+                templateUrl: '/Views/Company/list.html',
                 controller: 'CompanyListController'
             })
-            .when('/index.html', {
-                templateUrl: '/Views/list.html',
+            .when('/company/index.html', {
+                templateUrl: '/Views/Company/list.html',
                 controller: 'CompanyListController'
             })
             .when('/company/add/', {
-                templateUrl: '/Views/add.html',
+                templateUrl: '/Views/Company/add.html',
                 controller: 'CompanyAddController'
             })
             .when('/company/edit/:id', {
-                templateUrl: '/Views/edit.html',
+                templateUrl: '/Views/Company/edit.html',
                 controller: 'CompanyEditController'
             })
             .when('/company/delete/:id', {
-                templateUrl: '/Views/delete.html',
+                templateUrl: '/Views/Company/delete.html',
                 controller: 'CompanyDeleteController'
             })
         ;

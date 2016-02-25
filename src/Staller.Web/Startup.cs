@@ -1,13 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using Microsoft.AspNet.Builder;
-using Microsoft.AspNet.Http;
+﻿using Microsoft.AspNet.Builder;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Configuration;
-using Microsoft.AspNet.Hosting;
-using Microsoft.Dnx.Runtime;
 
 namespace Staller.Web
 {
@@ -21,7 +14,7 @@ namespace Staller.Web
             //services.AddOptions();
             //services.Configure<ConnectionStringsOptions>(Configuration);
             services.AddMvc();
-            
+
         }
 
         //public Startup(IHostingEnvironment env, IApplicationEnvironment appEnv)
@@ -47,7 +40,11 @@ namespace Staller.Web
 
         public void Configure(IApplicationBuilder app)
         {
+            app.UseDeveloperExceptionPage();
+            app.UseDefaultFiles();
             app.UseStaticFiles();
+            app.UseIISPlatformHandler();
+
             app.UseMvc(routes =>
             {
                 routes.MapRoute(

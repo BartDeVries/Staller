@@ -22,7 +22,7 @@
         $scope.company.Label = 'temp';
         $scope.add = function () {
             $scope.company.$save(function () {
-                $location.path('/');
+                $location.path('/company/');
             });
         };
     }
@@ -37,7 +37,7 @@
         $scope.company = Company.get({ id: $routeParams.id });
         $scope.edit = function () {
             $scope.company.$update(function () {
-                $location.path('/');
+                $location.path('/company/');
             });
         };
     }
@@ -49,7 +49,7 @@
         $scope.company = Company.get({ id: $routeParams.id });
         $scope.remove = function () {
             $scope.company.$remove({ id: $scope.company.Id }, function () {
-                $location.path('/');
+                $location.path('/company/');
             });
         };
     }

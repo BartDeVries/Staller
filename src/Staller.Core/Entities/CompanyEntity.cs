@@ -29,9 +29,9 @@ namespace Staller.Core.Entities
         public bool IsActive { get; set; }
 
         [Required]
-        public LocalDateTime ActiveFrom { get; set; }
+        public DateTime ActiveFrom { get; set; }
 
         [Required]
-        public LocalDateTime ActiveTo { get; set; }
+        public DateTime ActiveTo { get; set; }
     }
 }

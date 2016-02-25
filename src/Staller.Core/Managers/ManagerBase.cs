@@ -126,5 +126,14 @@ namespace Staller.Core.Managers
             TableOperation saveOperation = TableOperation.InsertOrReplace(entityToSave);
             return await table.ExecuteAsync(saveOperation);
         }
+
+
+        public async Task<TableResult> Delete(TTableEntity entityToDelete)
+        {
+            TableOperation deleteOperation = TableOperation.Delete(entityToDelete);
+            return await table.ExecuteAsync(deleteOperation);
+        }
+
+
     }
 }

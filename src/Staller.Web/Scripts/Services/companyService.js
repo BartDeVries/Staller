@@ -8,8 +8,6 @@
     Company.$inject = ['$resource'];
 
     function Company($resource) {
-        //return $resource('/api/company/:id');
-
         return $resource(
                "/api/company/:id",
                { id: "@Id" },
