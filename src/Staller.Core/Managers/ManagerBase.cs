@@ -21,7 +21,7 @@ namespace Staller.Core.Managers
 
             
 
-            storageAccount = CloudStorageAccount.Parse(Configuration.ConnectionStrings.AzureStorage);
+            storageAccount = CloudStorageAccount.Parse(Configuration.Instance.ConnectionStrings.AzureStorage);
             tableClient = storageAccount.CreateCloudTableClient();
             table = tableClient.GetTableReference(TableReference);
         }

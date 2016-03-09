@@ -1,5 +1,10 @@
 {
-  "projects": [ "src", "test" ],
+  "projects": [
+    "src",
+    "test",
+    "wrap",
+    "C:/Users/bart/Downloads/identityazuretable-36482/Releases/2.x.x.x/src"
+  ],
   "sdk": {
     "version": "1.0.0-rc1-update1"
   }

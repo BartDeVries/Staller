@@ -6,11 +6,13 @@ using Microsoft.AspNet.Mvc;
 using Staller.Core;
 using Staller.Core.Managers;
 using Staller.Core.Entities;
+using Microsoft.AspNet.Authorization;
 
 // For more information on enabling Web API for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
 namespace Staller.Web
 {
+    [Authorize]
     [Route("api/[controller]")]
     public class CompanyController : Controller
     {
@@ -56,7 +58,7 @@ namespace Staller.Web
             else
             {
                 item.Id = Guid.NewGuid();
-                item.Label = Configuration.Label.Id;
+                item.Label = Configuration.Instance.Label.Id;
                 
                 CompanyManager cm = new CompanyManager();
                 var res = cm.Save(item);
